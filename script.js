@@ -10,7 +10,7 @@ var arr = arrA.concat(arrB);
         }
     }
  }
- 
+
  for(var i = 0; i < arr.length; i++){
     for(var j = 0; j < arrC.length;j++){
         if(arr[i] == arrC[j]){
@@ -137,7 +137,7 @@ function checkAnswer(){
         let selectedAnswer = _options.querySelector('.selected span').textContent
         if(selectedAnswer.trim() == HTMLDecode(correctAnswer)){
             correctScore++
-            _result.innerHTML = `<p> <i class = "fas fa-check"></i> Correct Answer! </p>`
+            _result.innerHTML = `<p> <i class = "fas fa-check"></i> Correct Answer, you got 10 points! </p>`
         } else {
             _result.innerHTML = `<p> <i class = "fas fa-times"></i> Incorrect Answer! </p> 
             <p> <small><b> Correct Answer: </b> ${correctAnswer}</small></ </p>`
@@ -158,7 +158,7 @@ function checkCount(){
     askedCount++;
     setCount();
     if(askedCount == totalQuestion){
-        _result.innerHTML = `<p> Your score is ${correctScore}</p>`;
+        _result.innerHTML = `<p> Your score is ${correctScore * 10}</p>`;
         _playAgainBtn.style.display = "block";
         _checkBtn.style.display = "none";
     } else {
