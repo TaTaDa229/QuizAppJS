@@ -1,73 +1,3 @@
-// Bai 1
-var arrA = [1,2,"a"];
-var arrB = [1,3,'b'];
-var arrC=[];
-var arr = arrA.concat(arrB);
- for(var i = 0; i < arrA.length; i++){
-    for(var j = 0; j < arrB.length; j++){
-        if(arrA[i] == arrB[j]){
-            arrC.push(arrA[i]);
-        }
-    }
- }
-
- for(var i = 0; i < arr.length; i++){
-    for(var j = 0; j < arrC.length;j++){
-        if(arr[i] == arrC[j]){
-            arr.splice(i,1);
-        }
-    }
- }
- console.log(arr);
-
-
-
-// Bai 2
-var arr = [
-    {
-        name: "Arsenal",
-        points: 99,
-        GD: 45,
-    },
-    {
-        name: "Chelsea",
-        points: 75,
-        GD: 39,
-    },
-    {
-        name: "Manches United",
-        points: 60,
-        GD: 29,
-    },
-    {
-        name: "Arsenal",
-        points: 88,
-        GD: 39,
-    },
-]
-
-var arrsort1 = arr.sort(function (a,b){
-   if(a.points === b.points){
-        if(a.GD === b.GD){
-            if(a.name > b.name) return 1;
-            if(a.name < b.name) return -1;
-            if(a.name == b.name) return 0;
-        }
-        return a.GD - b.GD
-   } return b.points - a.points
-});
-
-arr.forEach((item,index) => {
-    item.position = index + 1
-})
-
-console.log(arrsort1);
-
-
-
-// Bai 3
-
-
 const _question = document.getElementById('question');
 const _options = document.querySelector('.quiz-options');
 const _correctScore = document.getElementById('correct-score');
@@ -92,7 +22,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 })
 
 async function loadQuestion(){
-    const APIUrl = 'https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple'
+    const APIUrl = 'https://opentdb.com/api.php?amount=50'
     const result = await fetch(`${APIUrl}`)
     const data = await result.json()
     _result.innerHTML = ""
